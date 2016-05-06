@@ -17,7 +17,7 @@ http://stackoverflow.com/questions/24698968/how-to-create-a-thumbnail-that-fills
 Specify the collection field (store) to display on the client:
 
 https://github.com/CollectionFS/Meteor-CollectionFS#security
-	{{#each images}}
+	`{{#each images}}
 	  URL: {{this.url}}
 	  <img src="{{this.url store='thumbnail'}}" alt="thumbnail">
-	{{/each}}
+	{{/each}}`
