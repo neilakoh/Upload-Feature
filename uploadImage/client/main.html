@@ -1,0 +1,20 @@
+<head>
+  <title>simple</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> hello}}
+
+</body>
+
+<template name="hello">
+  <div id="uploadLoader" style="width: 500px;">{{#unless this.isUploaded}}{{> FS.UploadProgressBar bootstrap=true class='progress-bar-success progress-bar-striped active' showPercent=true}}{{/unless}}</div>
+  <input id="myFileInput" class="myFileInput" name="myFileInput" type="file" accept="image/*;capture=camera">
+  <!-- <button type="button" id="upload">Upload</button> -->
+  <hr/>
+  {{#each displayImage}}
+    <a href="{{this.url}}" target="_blank"><img src="{{this.url store='thumbs'}}" class="thumbnail" height="128" width="128"></a><br/>
+  {{/each}}
+</template>
